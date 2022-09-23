@@ -15,6 +15,7 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 public class CardAssessmentController {
 
     @Autowired
