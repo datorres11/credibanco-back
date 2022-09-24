@@ -21,7 +21,7 @@ public class Tarjeta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTarjeta;
     @Id
-    @Column(name = "PAN")
+    @Column(name = "PAN",precision = 19)
     private Long numTarjeta;
 
     @Column(name = "NUM_VERIFICACION")
@@ -30,10 +30,13 @@ public class Tarjeta {
     @Column(name = "NOM_TITULAR")
     private String titular;
 
-    @Column(name = "NUM_IDENTIFICACION")
+    @Column(name = "NUM_IDENTIFICACION",precision = 15)
     private String numIdentificacion;
 
-    @Column(name = "NUM_TELEFONO")
+    @Column(name = "TIPO_TARJETA",precision = 15)
+    private String tipoTarjeta;
+
+    @Column(name = "NUM_TELEFONO",precision = 10)
     private Long numTelefono;
 
     @Column(name = "ESTADO")

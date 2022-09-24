@@ -119,7 +119,8 @@ public class CardAssessmentService implements ICardAssessmentService {
 
     @Override
     public List<TransacionResponseDto> obtenerTransacciones(Long numTarjeta) {
-        List<Transaccion> transacciones=iTransaccionRepository.findByTarjeta(numTarjeta);
+        Optional<Tarjeta> tarjeta=iTarjetaRepository.findByNumTarjeta(numTarjeta);
+        List<Transaccion> transacciones=iTransaccionRepository.findByTarjeta(tarjeta.get());
         List<TransacionResponseDto> transacionResponseDtos = new ArrayList<>();
         for(Transaccion transaccion: transacciones){
             transacionResponseDtos.add(CardAssessmentUtils.convertirTarjetaEntityATransacionResponseDto(transaccion));

@@ -14,5 +14,5 @@ public interface ITransaccionRepository extends JpaRepository<Transaccion,Long> 
     Optional<Transaccion> findByNumReferencia(Integer numReferencia);
 
     @Query("Select transaccion FROM Transaccion transaccion where transaccion.tarjeta= :numTarjeta")
-    List<Transaccion> findByTarjeta(Long numTarjeta);
+    List<Transaccion> findByTarjeta(Tarjeta numTarjeta);
 }

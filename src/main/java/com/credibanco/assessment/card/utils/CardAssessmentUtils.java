@@ -22,7 +22,8 @@ public class CardAssessmentUtils {
                 .numTelefono(tarjetaRequestDto.getNumTelefono())
                 .titular(tarjetaRequestDto.getTitular())
                 .numIdentificacion(tarjetaRequestDto.getNumIdentificacion())
-                .numVerificaion(numVerificacion).build();
+                .numVerificaion(numVerificacion)
+                .tipoTarjeta(tarjetaRequestDto.getTipoTarjeta()).build();
     }
 
     public TransacionResponseDto convertirTarjetaEntityATransacionResponseDto(Transaccion transaccion){
